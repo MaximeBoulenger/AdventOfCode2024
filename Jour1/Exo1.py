@@ -10,16 +10,12 @@ with open('Exo1.csv', 'r') as data:
 Liste1.sort()
 Liste2.sort()
 
+# Partie 1
 Liste3 = []
 Distance = 0
 
-# Partie 1
-
 for i in range(len(Liste1)):
-    if Liste1[i] > Liste2[i]:
-        Liste3.append(Liste1[i] - Liste2[i])
-    else:
-        Liste3.append(Liste2[i] - Liste1[i])
+    Liste3.append(abs(Liste2[i] - Liste1[i]))
     Distance += Liste3[i]
 
 print("Distance Totale :", Distance)
