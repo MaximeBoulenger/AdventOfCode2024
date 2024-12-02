@@ -11,25 +11,24 @@ Liste1.sort()
 Liste2.sort()
 
 # Partie 1
-Liste3 = []
-Distance = 0
 
+"""Distance = 0
 for i in range(len(Liste1)):
-    Liste3.append(abs(Liste2[i] - Liste1[i]))
-    Distance += Liste3[i]
+    Distance += abs(Liste1[i] - Liste2[i])"""
+
+Distance = sum(abs(Liste1[i] - Liste2[i]) for i in range(len(Liste1)))
 
 print("Distance Totale :", Distance)
 
 # Partie 2
 
-Compteur = 0
 Distance = 0
 
 for i in range(len(Liste1)):
+    Compteur = 0
     for j in range(len(Liste2)):
         if Liste1[i] == Liste2[j]:
             Compteur += 1
     Distance += Compteur * Liste1[i]
-    Compteur = 0
 
 print("Similarité :", Distance)
